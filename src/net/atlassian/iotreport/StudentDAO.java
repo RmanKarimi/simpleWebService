@@ -13,7 +13,7 @@ public class StudentDAO {
 	private static List<Student> data = new ArrayList<>();
 	private final String url = "jdbc:postgresql://localhost:5432/studentdb";
 	private final String user= "student";
-	private final String password= "123456789";
+	private final String password= "******";
 
 //	static {
 //		data.add(new Student(1, "arman", "2001-10-10" ));
