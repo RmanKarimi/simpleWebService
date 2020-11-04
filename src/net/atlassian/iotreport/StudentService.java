@@ -31,9 +31,7 @@ public class StudentService {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public int create(Student student) throws ClassNotFoundException, SQLException, URISyntaxException {
-//		int newStdId = 
 	    int status = dao.add(student);
-//		URI uri = new URI("/students/"+ name);
 		return status;
 	}
 	
@@ -52,9 +50,7 @@ public class StudentService {
 	
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-//	@Path("{id}")
 	public int update(Student student) throws ClassNotFoundException, SQLException {
-//		student.setId(id);
 		if(dao.update( student)) {
 			return 200;//Response.ok().build();
 		}

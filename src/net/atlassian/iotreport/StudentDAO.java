@@ -16,8 +16,8 @@ public class StudentDAO {
 	private final String password= "123456789";
 
 //	static {
-//		data.add(new Student(1, "arman karimi", "2001-10-10" ));
-//		data.add(new Student(2,"aryan karimi", "2009-10-11"));
+//		data.add(new Student(1, "arman", "2001-10-10" ));
+//		data.add(new Student(2,"david budd", "2009-10-11"));
 //	}
 	
 //	private StudentDAO() {	}
@@ -65,9 +65,7 @@ public class StudentDAO {
 				+ " VALUES ("+ "'" +student.getName()+ "'"+","+"'" +student.getBirthdate()+ "'" +");";
 		System.out.println(insert_query);
 		getConnection().createStatement().executeUpdate(insert_query);
-//		int newId = data.size()+1;
-//		student.setId(newId);
-//		data.add(student);
+
 		return 200;
 		}
 	}
@@ -83,11 +81,7 @@ public class StudentDAO {
 	
 	
 	public boolean update(Student student) throws ClassNotFoundException, SQLException {
-//		int index= data.indexOf(student);
-//		if ( index >= 0) {
-//			data.set(index, student);
-//			return true;
-//		}
+
 		String update_query = "UPDATE student SET name="+"'" +student.getName()+"'"+ 
 				",birthdate="+"'"+student.getBirthdate()+"'"
 				+" WHERE id=" +student.getId()+ ";";
@@ -97,13 +91,7 @@ public class StudentDAO {
 	}
 	
 	public boolean delete(int id) throws ClassNotFoundException, SQLException {
-//		Student studentToFind = new Student(id);
-//		int index = data.indexOf(studentToFind);
-//		if (index >= 0) {
-//			data.remove(index);
-//			return true;
-//		}
-//		return false;
+
 		String delete_query="DELETE FROM student WHERE id="+id+";";
 		getConnection().createStatement().executeUpdate(delete_query);
 		return true;
